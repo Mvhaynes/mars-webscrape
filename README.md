@@ -20,7 +20,7 @@ The information was scraped and added to a dictionary.
 
 Using Flask, the app route ('/scrape') calls the scrape function that collects the above information then updates/inserts the dictionary into a MongoDB database and redirects to the index. The index page locates and returns a template containing the scraped information. 
 
-Final webpage:
+# Final webpage:
 ![top](screenshots/front_page.png)
 ![bottom](screenshots/hemispheres.png)
 
