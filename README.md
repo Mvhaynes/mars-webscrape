@@ -1,7 +1,7 @@
 # mars-webscrape
 
 ## Tools
-BeautifulSoup, Webdriver Manager, Splinter, Requests, Flask, Pandas, PyMongo.
+BeautifulSoup, Webdriver Manager, Splinter, Requests, Flask, Pandas, PyMongo, HTML.
 
 ## Summary
 
