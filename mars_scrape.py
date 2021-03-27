@@ -57,7 +57,7 @@ def scrape():
     facts_df = pd.DataFrame(tables[0])
 
     # Convert to HTML table string
-    facts_html = facts_df.to_html()
+    facts_html = facts_df.to_html(header=None, index=False)
 
 
     ## Mars Hemispheres Scrape
@@ -104,29 +104,25 @@ def scrape():
         titles.append(title)
         
         # Navigate to image link location
-        downloads = soup.find('div', class_='downloads')
-        download_list = downloads.find_all('ul')
-        
-        # Loop through list and scrape the .tif link
-        for download in download_list:
-            
-            # Navigate to the download links 
-            anchors = download.find_all('a')
-            
-            # Only get the full-size image (Original)
-            tif = anchors[1] 
-            
-            # Scrape the link
-            link = tif['href']
-            
-            # Add to list
-            img_links.append(link)
+        img_link = soup.find('img', class_='wide-image')
+        img_link = img_link['src']
+        img_links.append(img_link)
+
+        # Create list of dictionaries for each image
+        keys = ['title', 'img_url']
+        zip_list= list(zip(titles, img_links))
+        hemispheres = [{k:v for k,v in zip(keys, z)} for z in zip_list]
+
+    # Generate full url link
+    full_img_links = []
+    for link in img_links:
+        full_link = base_url + link
+        full_img_links.append(full_link)
 
     # Create list of dictionaries for each image
     keys = ['title', 'img_url']
-    zip_list= list(zip(titles, img_links))
+    zip_list= list(zip(titles, full_img_links))
     hemispheres = [{k:v for k,v in zip(keys, z)} for z in zip_list]
-
 
     # Compile into a dictionary
     mars_dict = {
