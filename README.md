@@ -1,7 +1,7 @@
 # mars-webscrape
 
 ## Tools
-BeautifulSoup, Webdriver Manager, Splinter, Requests, Flask, Pandas, PyMongo.
+BeautifulSoup, Webdriver Manager, Splinter, Requests, Flask, Pandas, PyMongo, HTML.
 
 ## Summary
 
@@ -18,9 +18,9 @@ The information was scraped and added to a dictionary.
 
 ## Flask app
 
-Using Flask, the app route ('/scrape') calls the scrape function that collects the above information then updates/inserts the dictionary into a MongoDB database and redirects to the index. The index page locates and returns a template containing the scraped information. 
+Using Flask, the app route ('/scrape') calls the scrape function that collects the above information then updates/inserts the dictionary into a MongoDB database and redirects to the index on your local device. The index page locates and returns a template containing the scraped information. 
 
-Final webpage:
+# Final webpage:
 ![top](screenshots/front_page.png)
 ![bottom](screenshots/hemispheres.png)
 
