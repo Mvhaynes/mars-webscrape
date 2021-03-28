@@ -22,10 +22,6 @@ def scrape():
 
 
     ## JPL Scrape
-    # Import url and parse the html
-    response = requests.get(url)
-    soup = bs(response.text, 'html.parser')
-
     # splinter: find the image url for the current Featured Mars Image - `featured_image_url`.
     executable_path = {'executable_path': ChromeDriverManager().install()}
     browser = Browser('chrome', **executable_path, headless=False)
