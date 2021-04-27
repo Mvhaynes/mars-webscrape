@@ -1,5 +1,3 @@
 Flask==1.1.2
 Flask-PyMongo==2.3.0
 heroku==0.1.4
-python-language-server @ file:///tmp/build/80754af9/python-language-server_1600454544709/work
-requests @ file:///tmp/build/80754af9/requests_1592841827918/work
